@@ -1,0 +1,4 @@
+enum ButtonMode {
+  light,
+  dark,
+}

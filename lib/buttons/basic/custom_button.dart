@@ -216,13 +216,14 @@ class _CustomButtonState extends State<CustomButton> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     if (widget.icon != null &&
-                        widget.iconPosition == ButtonIconPosition.side)
+                        widget.iconPosition == ButtonIconPosition.side) ...[
                       SvgPicture.asset(
                         widget.icon!,
                         width: _iconSize,
                         height: _iconSize,
                       ),
-                    const SizedBox(width: 8),
+                      const SizedBox(width: 8),
+                    ],
                     Text(
                       widget.text,
                       style: MyFonts.m.copyWith(
@@ -234,7 +235,7 @@ class _CustomButtonState extends State<CustomButton> {
                 if (widget.icon != null)
                   Opacity(
                     opacity:
-                        widget.iconPosition == ButtonIconPosition.left ? 1 : 0,
+                        widget.iconPosition == ButtonIconPosition.right ? 1 : 0,
                     child: SvgPicture.asset(
                       widget.icon!,
                       width: _iconSize,

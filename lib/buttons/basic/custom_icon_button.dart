@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_apps_theme/buttons/button_colors.dart';
 import 'package:my_apps_theme/buttons/my_ink_well.dart';
+import 'package:my_apps_theme/core/enums/app_mode.dart';
 import 'package:my_apps_theme/my_apps_theme.dart';
 
 class CustomIconButton extends StatefulWidget {
   final Function onTap;
-  final ButtonMode mode;
+  final AppMode mode;
   final ButtonSize size;
   final ButtonState state;
   final ButtonType type;
@@ -16,7 +17,7 @@ class CustomIconButton extends StatefulWidget {
     Key? key,
     required this.icon,
     required this.onTap,
-    this.mode = ButtonMode.light,
+    this.mode = AppMode.light,
     this.size = ButtonSize.block,
     this.state = ButtonState.common,
     this.type = ButtonType.primary,
@@ -42,7 +43,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
             color = ButtonColors.primaryDark;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLighter;
             } else {
               color = ButtonColors.skyLight;
@@ -53,7 +54,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
       case ButtonType.secondary:
         switch (_buttonState) {
           case ButtonState.common:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = Colors.white;
             } else {
               color = ButtonColors.primaryLightest;
@@ -63,7 +64,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
             color = ButtonColors.primaryLighter;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLighter;
             } else {
               color = ButtonColors.skyLight;
@@ -88,7 +89,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
             color = Colors.transparent;
             break;
           case ButtonState.pressed:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.primaryLighter;
             } else {
               color = ButtonColors.primaryLightest;
@@ -108,19 +109,19 @@ class _CustomIconButtonState extends State<CustomIconButton> {
   Color _getButtonBorderColor() {
     switch (_buttonState) {
       case ButtonState.common:
-        if (widget.mode == ButtonMode.dark) {
+        if (widget.mode == AppMode.dark) {
           return ButtonColors.primaryLight;
         } else {
           return ButtonColors.primaryBase;
         }
       case ButtonState.pressed:
-        if (widget.mode == ButtonMode.dark) {
+        if (widget.mode == AppMode.dark) {
           return ButtonColors.primaryBase;
         } else {
           return ButtonColors.primaryDark;
         }
       case ButtonState.disabled:
-        if (widget.mode == ButtonMode.dark) {
+        if (widget.mode == AppMode.dark) {
           return ButtonColors.inkLighter;
         } else {
           return ButtonColors.skyBase;

@@ -1,4 +1,4 @@
-enum ButtonMode {
+enum AppMode {
   light,
   dark,
 }

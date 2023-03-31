@@ -3,19 +3,19 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_apps_theme/buttons/button_colors.dart';
-import 'package:my_apps_theme/buttons/enums/button_mode.dart';
 import 'package:my_apps_theme/buttons/enums/button_size.dart';
 import 'package:my_apps_theme/buttons/enums/button_state.dart';
 import 'package:my_apps_theme/buttons/enums/button_type.dart';
 import 'package:my_apps_theme/buttons/enums/button_icon_position.dart';
 import 'package:my_apps_theme/buttons/my_ink_well.dart';
+import 'package:my_apps_theme/core/enums/app_mode.dart';
 import 'package:my_apps_theme/my_fonts.dart';
 
 class CustomButton extends StatefulWidget {
   final String text;
   final Function onTap;
   final ButtonIconPosition iconPosition;
-  final ButtonMode mode;
+  final AppMode mode;
   final ButtonSize size;
   final ButtonState state;
   final ButtonType type;
@@ -26,7 +26,7 @@ class CustomButton extends StatefulWidget {
     required this.text,
     required this.onTap,
     this.iconPosition = ButtonIconPosition.none,
-    this.mode = ButtonMode.light,
+    this.mode = AppMode.light,
     this.size = ButtonSize.block,
     this.state = ButtonState.common,
     this.type = ButtonType.primary,
@@ -53,7 +53,7 @@ class _CustomButtonState extends State<CustomButton> {
             color = ButtonColors.primaryDark;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLighter;
             } else {
               color = ButtonColors.skyLight;
@@ -64,7 +64,7 @@ class _CustomButtonState extends State<CustomButton> {
       case ButtonType.secondary:
         switch (_buttonState) {
           case ButtonState.common:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = Colors.white;
             } else {
               color = ButtonColors.primaryLightest;
@@ -74,7 +74,7 @@ class _CustomButtonState extends State<CustomButton> {
             color = ButtonColors.primaryLighter;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLighter;
             } else {
               color = ButtonColors.skyLight;
@@ -99,7 +99,7 @@ class _CustomButtonState extends State<CustomButton> {
             color = Colors.transparent;
             break;
           case ButtonState.pressed:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.primaryLighter;
             } else {
               color = ButtonColors.primaryLightest;
@@ -126,7 +126,7 @@ class _CustomButtonState extends State<CustomButton> {
             color = Colors.white;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLightest;
             } else {
               color = ButtonColors.skyDark;
@@ -143,7 +143,7 @@ class _CustomButtonState extends State<CustomButton> {
             color = ButtonColors.primaryDark;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLighter;
             } else {
               color = ButtonColors.skyDark;
@@ -154,21 +154,21 @@ class _CustomButtonState extends State<CustomButton> {
       case ButtonType.outline:
         switch (_buttonState) {
           case ButtonState.common:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.primaryLight;
             } else {
               color = ButtonColors.primaryBase;
             }
             break;
           case ButtonState.pressed:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.primaryBase;
             } else {
               color = ButtonColors.primaryDark;
             }
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLighter;
             } else {
               color = ButtonColors.skyBase;
@@ -185,7 +185,7 @@ class _CustomButtonState extends State<CustomButton> {
             color = ButtonColors.primaryBase;
             break;
           case ButtonState.disabled:
-            if (widget.mode == ButtonMode.dark) {
+            if (widget.mode == AppMode.dark) {
               color = ButtonColors.inkLightest;
             } else {
               color = ButtonColors.skyBase;
@@ -202,19 +202,19 @@ class _CustomButtonState extends State<CustomButton> {
   Color _getButtonBorderColor() {
     switch (_buttonState) {
       case ButtonState.common:
-        if (widget.mode == ButtonMode.dark) {
+        if (widget.mode == AppMode.dark) {
           return ButtonColors.primaryLight;
         } else {
           return ButtonColors.primaryBase;
         }
       case ButtonState.pressed:
-        if (widget.mode == ButtonMode.dark) {
+        if (widget.mode == AppMode.dark) {
           return ButtonColors.primaryBase;
         } else {
           return ButtonColors.primaryDark;
         }
       case ButtonState.disabled:
-        if (widget.mode == ButtonMode.dark) {
+        if (widget.mode == AppMode.dark) {
           return ButtonColors.inkLighter;
         } else {
           return ButtonColors.skyBase;

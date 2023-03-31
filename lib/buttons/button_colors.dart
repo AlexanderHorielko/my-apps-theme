@@ -10,7 +10,12 @@ class ButtonColors {
   static const Color skyBase = Color(0xFFCDCFD0);
   static const Color skyLight = Color(0xFFE3E5E5);
   static const Color skyDark = Color(0xFFCDCFD0);
+  static const Color skyWhite = Color(0xFFFFFFFF);
 
+  static const Color inkBase = Color(0xFF0E0F0F);
   static const Color inkLighter = Color(0xFF464A4D);
   static const Color inkLightest = Color(0xFF7A7E80);
+
+  static const Color facebook50 = Color(0xFF0078FF);
+  static const Color twitter50 = Color(0xFF1DA1F2);
 }

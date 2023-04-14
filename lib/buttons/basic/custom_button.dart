@@ -306,6 +306,9 @@ class _CustomButtonState extends State<CustomButton> {
                       widget.icon!,
                       width: _iconSize,
                       height: _iconSize,
+                      color: widget.mode == AppMode.light
+                          ? ButtonColors.inkBase
+                          : ButtonColors.skyWhite,
                     ),
                   ),
               ],

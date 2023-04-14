@@ -29,7 +29,11 @@ class CustomIconButton extends StatefulWidget {
 
 class _CustomIconButtonState extends State<CustomIconButton> {
   late ButtonState _buttonState = widget.state;
-  late final _iconSize = widget.size == ButtonSize.small ? 16.0 : 24.0;
+  late final _iconSize = widget.size == ButtonSize.small
+      ? 16.0
+      : widget.size == ButtonSize.block
+          ? 24.0
+          : 32.0;
 
   Color _getButtonColor() {
     Color color = ButtonColors.primaryBase;
@@ -166,6 +170,9 @@ class _CustomIconButtonState extends State<CustomIconButton> {
               widget.icon,
               width: _iconSize,
               height: _iconSize,
+              color: widget.mode == AppMode.light
+                  ? ButtonColors.inkBase
+                  : ButtonColors.skyWhite,
             ),
           ),
         ),

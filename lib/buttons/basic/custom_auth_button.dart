@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_apps_theme/buttons/button_colors.dart';
 import 'package:my_apps_theme/buttons/enums/button_auth_type.dart';
-import 'package:my_apps_theme/core/svgs.dart';
+import 'package:my_apps_theme/core/assets/svgs.dart';
 
 class CustomAuthButton extends StatefulWidget {
   final ButtonAuthType type;
